@@ -1,15 +1,41 @@
-Source: template-repository
-Section: unknown
+Source: libnetfilter-acct
+Section: libs
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Netfilter Packaging Team <pkg-netfilter-team@lists.alioth.debian.org>
+Uploaders: Laurence J. Lane <ljlane@debian.org>,
+           Samuel Henrique <samueloph@debian.org>
+Homepage: https://www.netfilter.org/projects/libnetfilter_acct/
+Build-Depends: debhelper-compat (= 13),
+               libmnl-dev,
+               libnfnetlink-dev (>= 1.0.0)
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Vcs-Git: https://salsa.debian.org/pkg-netfilter-team/pkg-libnetfilter-acct.git
+Vcs-Browser: https://salsa.debian.org/pkg-netfilter-team/pkg-libnetfilter-acct
 
-Package: template-repository
+Package: libnetfilter-acct1
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: Netfilter acct library
+ libnetfilter_acct is a userspace library providing an interface to the
+ extended netfilter accounting infrastructure.
+
+Package: libnetfilter-acct-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libmnl-dev,
+         libnetfilter-acct1 (= ${binary:Version}),
+         libnfnetlink-dev (>= 1.0.0),
+         pkg-config,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: Development files for libnetfilter-acct1
+ libnetfilter_acct is a userspace library providing an interface to the
+ extended netfilter accounting infrastructure.
+ .
+ This package provides development files and static libraries.
