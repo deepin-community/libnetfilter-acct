@@ -1,5 +1,74 @@
-template-repository (1.0-1) unstable; urgency=medium
+libnetfilter-acct (1.0.3-3) unstable; urgency=medium
 
-  * Initial release
+  [ Debian Janitor ]
+  * Set debhelper-compat version in Build-Depends.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Samuel Henrique ]
+  * Bump DH to 13
+  * Bump Standards-Version to 4.5.0
+  * d/not-installed: Create file and list .la file
+  * d/rules: Remove override_dh_strip, dbgsym migration is complete
+  * d/control: Move misc:Pre-Depends to the correct place
+  * d/control: Add Rules-Requires-Root: no
+  * d/p/001-changelog.patch: Add Forwarded field
+  * Add d/salsa-ci.yml
+  * Add d/gbp.conf
+
+ -- Samuel Henrique <samueloph@debian.org>  Mon, 07 Sep 2020 00:25:58 +0100
+
+libnetfilter-acct (1.0.3-2) unstable; urgency=medium
+
+  * Bump DH level to 11
+  * Bump Standards-Version to 4.2.1
+  * Change project URL to https protocol
+  * Update Vcs-* fields to salsa
+  * Update my email to @debian.org
+  * d/copyright: update debian/* entry
+  * d/control:
+    - Set priority to optional, extra was deprecated on policy 4.0.1
+    - Mark libnetfilter-acct-dev as Multi-Arch: same
+  * wrap-and-sort -a
+
+ -- Samuel Henrique <samueloph@debian.org>  Wed, 03 Oct 2018 18:15:16 -0300
+
+libnetfilter-acct (1.0.3-1) unstable; urgency=medium
+
+  * New upstream release 1.0.3.
+  * Bump DH level to 10.
+  * Bump Standards-Version to 4.0.0.
+  * Bump watch to v4.
+  * Switch maintainer to netfilter team.
+  * Switch from -dbg package to -dbgsym (closes: #778518).
+  * d/control: Add Vcs-* fields.
+  * d/copyright: convert to DEP-5.
+  * d/rules: export hardening flag to enable bindnow.
+  * wrap-and-sort -a.
+
+ -- Samuel Henrique <samueloph@debian.org>  Sun, 25 Jun 2017 23:39:04 -0300
+
+libnetfilter-acct (1.0.2-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Add dh-autoreconf to fix FTBFS on ppc64el. Closes: #734029
+
+ -- Andreas Barth <aba@ayous.org>  Wed, 10 Sep 2014 11:11:29 +0000
+
+libnetfilter-acct (1.0.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Bumped Standards-Version to 3.9.4
+
+ -- Laurence J. Lane <ljlane@debian.org>  Mon, 25 Mar 2013 14:34:10 -0400
+
+libnetfilter-acct (1.0.1-2) unstable; urgency=low
+
+  * Corrected debian/watch
+  * Added upstream changelog
+
+ -- Laurence J. Lane <ljlane@debian.org>  Sat, 27 Oct 2012 04:02:55 -0400
+
+libnetfilter-acct (1.0.1-1) unstable; urgency=low
+
+  * Initial packaging. Closes: #666026
+
+ -- Laurence J. Lane <ljlane@debian.org>  Tue, 23 Oct 2012 16:02:14 -0400
